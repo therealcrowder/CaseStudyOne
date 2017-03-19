@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 #Case Study One   
 ###By: Michael Crowder, Nadya Green & Jonathan Knowels  
 Date: `r format(Sys.time(), '%d %B, %Y')`  
@@ -90,9 +95,9 @@ mean(subset(matchedData, Income.Group %in% "High income: nonOECD", select = c(Ra
 ```
 #### Answer to question #4
 ```{r}
-ggplot(matchedData,aes(y = GDP.Value, x =Income.Group, fill=Income.Group)) + scale_y_log10()+ geom_point(pch = 21, size = 8)
+#ggplot(matchedData,aes(y = GDP.Value, x =Income.Group, fill=Income.Group)) + scale_y_log10()+ geom_point(pch = 21, size = 8)
 ```
-
+plot: ![](/Users/mcrowder/Documents/Grad School/Data_Science/CSOne/CaseStudyOne/GDPplot.png)
 #### Answer to question #5
 ```{r}
 breaks <- quantile(matchedData$Rank,seq(0, 1, 0.2))
