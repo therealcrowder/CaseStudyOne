@@ -97,7 +97,7 @@ mean(subset(matchedData, Income.Group %in% "High income: nonOECD", select = c(Ra
 ```{r}
 #ggplot(matchedData,aes(y = GDP.Value, x =Income.Group, fill=Income.Group)) + scale_y_log10()+ geom_point(pch = 21, size = 8)
 ```
-plot: ![](/Users/mcrowder/Documents/Grad School/Data_Science/CSOne/CaseStudyOne/GDPplot.png)
+plot: ![](CaseStudyOne/GDPplot.png)
 #### Answer to question #5
 ```{r}
 breaks <- quantile(matchedData$Rank,seq(0, 1, 0.2))
