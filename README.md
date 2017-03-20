@@ -3,7 +3,7 @@
 Date: `r format(Sys.time(), '%d %B, %Y')`  
 output: github_document  
 
-###**Introduction**
+###**Introduction**  
 #####We want to look at data that relates Gross Domestic Product and involvement in the **Organization for Economic Cooperation and Development (OECD)** for more information on the OECD please visit [https://usoecd.usmission.gov/mission/overview.html].  What we find from the below acquisition, cleaning and analysis of the data is that there appears to be some relationship to being a member country of the OECD and increased GDP. With that said we must caution the reader that the OECD has only been around for 50 years. It takes many years and geopolitical stability to build the necessary political and physical infrastructure needed to build a strong and stable economy. When we take a step back and look at the horizon of history many of the countries involved in OECD have spent at times hundreds of years developing the necessary political and physical infrastructure to participate and prosper in a global economy. Below we have included the source of the information we used, the methods used to clean and tidy the data and our answers to case specific questions. The below code was written in R.
 
 ##### Install the following packages for this case study *if needed*
