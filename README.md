@@ -1,159 +1,168 @@
-Case Study One
+CaseStudy1Makefile
 ================
-Michael Crowder
-3/20/2017
+Jonathan Knowles, Nadia Green, Michael Crowder
+March 20, 2017
 
--   [Case Study One](#case-study-one)
-    -   [By: Michael Crowder, Nadya Green & Jonathan Knowels](#by-michael-crowder-nadya-green-jonathan-knowels)
-    -   [**Introduction**](#introduction)
+-   [Introduction](#introduction)
+    -   [We want to look at data that relates Gross Domestic Product and involvement in the Organization for Economic Cooperation and Development (OECD) for more information on the OECD please visit \[<https://usoecd.usmission.gov/mission/overview.html>\]. What we find from the below acquisition, cleaning and analysis of the data is that there appears to be some relationship to being a member country of the OECD and increased GDP. Below we have included the source of the information we used, the methods used to clean and tidy the data and our answers to case specific questions.](#we-want-to-look-at-data-that-relates-gross-domestic-product-and-involvement-in-the-organization-for-economic-cooperation-and-development-oecd-for-more-information-on-the-oecd-please-visit-httpsusoecd.usmission.govmissionoverview.html.-what-we-find-from-the-below-acquisition-cleaning-and-analysis-of-the-data-is-that-there-appears-to-be-some-relationship-to-being-a-member-country-of-the-oecd-and-increased-gdp.-below-we-have-included-the-source-of-the-information-we-used-the-methods-used-to-clean-and-tidy-the-data-and-our-answers-to-case-specific-questions.)
+    -   [Install Packages and Load Libraries - if you already have these Packages installed and loaded you may skip this step.](#install-packages-and-load-libraries---if-you-already-have-these-packages-installed-and-loaded-you-may-skip-this-step.)
+    -   [Gathering the data with the below code allows us to download the data from the below websites and stores them in your current directory on R.](#gathering-the-data-with-the-below-code-allows-us-to-download-the-data-from-the-below-websites-and-stores-them-in-your-current-directory-on-r.)
+    -   [Cleaning the data by using easy to understand file names from a CSV format.](#cleaning-the-data-by-using-easy-to-understand-file-names-from-a-csv-format.)
+    -   [Here we merge and futher tidy the data with human readable columns and set GDP as numeric.](#here-we-merge-and-futher-tidy-the-data-with-human-readable-columns-and-set-gdp-as-numeric.)
+    -   [In this section we answer the questions to the Case Study.](#in-this-section-we-answer-the-questions-to-the-case-study.)
+    -   [Conclusion](#conclusion)
 
-Case Study One
-==============
+Introduction
+============
 
-### By: Michael Crowder, Nadya Green & Jonathan Knowels
+#### We want to look at data that relates Gross Domestic Product and involvement in the Organization for Economic Cooperation and Development (OECD) for more information on the OECD please visit \[<https://usoecd.usmission.gov/mission/overview.html>\]. What we find from the below acquisition, cleaning and analysis of the data is that there appears to be some relationship to being a member country of the OECD and increased GDP. Below we have included the source of the information we used, the methods used to clean and tidy the data and our answers to case specific questions.
 
-Date: 20 March, 2017
-output: github\_document
-
-### **Introduction**
-
-##### We want to look at data that relates Gross Domestic Product and involvement in the **Organization for Economic Cooperation and Development (OECD)** for more information on the OECD please visit \[<https://usoecd.usmission.gov/mission/overview.html>\]. What we find from the below acquisition, cleaning and analysis of the data is that there appears to be some relationship to being a member country of the OECD and increased GDP. With that said we must caution the reader that the OECD has only been around for 50 years. It takes many years and geopolitical stability to build the necessary political and physical infrastructure needed to build a strong and stable economy. When we take a step back and look at the horizon of history many of the countries involved in OECD have spent at times hundreds of years developing the necessary political and physical infrastructure to participate and prosper in a global economy. Below we have included the source of the information we used, the methods used to clean and tidy the data and our answers to case specific questions. The below code was written in R.
-
-##### Install the following packages for this case study *if needed*
+#### Install Packages and Load Libraries - if you already have these Packages installed and loaded you may skip this step.
 
 ``` r
-#install.packages("knitr")
-#install.packages("markdown")
-#install.packages("downloader")
-#install.packages("lattice")
-#install.packages("survival")
-#install.packages("Formula")
-#install.packages("ggplot2")
-#install.packages("Hmisc")
-#install.packages("repmis")
-#install.packages("bitops")
-#install.packages("Rcurl")
-#install.packages("plyr")
-#install.packages("reshape2")
+source("InstallPackagesLoadLibraries.R", print.eval = TRUE)
 ```
 
-##### Load libraries needed for this case study
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+
+    ## Warning: package 'Rcurl' is not available (for R version 3.3.2)
+
+    ## Warning: Perhaps you meant 'RCurl' ?
+
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+
+#### Gathering the data with the below code allows us to download the data from the below websites and stores them in your current directory on R.
 
 ``` r
-library(knitr)
-library(markdown)
-library(downloader)
-library(lattice)
-library(survival)
-library(Formula)
-library(ggplot2)
-library(Hmisc)
-library(repmis)
-library(bitops)
-library(RCurl)
-library(plyr)
-library(reshape2)
+source("GatherData.R", print.eval = TRUE, echo = TRUE)
 ```
 
-##### Gather data
+    ## 
+    ## > gdpURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv"
+    ## 
+    ## > eduURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv"
+    ## 
+    ## > gdpFile <- tempfile()
+    ## 
+    ## > eduFile <- tempfile()
+    ## 
+    ## > download.file(gdpURL, gdpFile)
+    ## 
+    ## > download.file(eduURL, eduFile)
+
+#### Cleaning the data by using easy to understand file names from a CSV format.
 
 ``` r
-gdpURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv"
-eduURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv"
-gdpFile <- tempfile()
-eduFile <- tempfile()
-download.file(gdpURL, gdpFile)
-download.file(eduURL, eduFile)
+source("TidyAndCleanData.R", print.eval = TRUE, echo = TRUE)
 ```
 
-#### Tidy and Clean the Data
+    ## 
+    ## > gdpData <- read.csv(gdpFile, skip = 5, nrows = 190, 
+    ## +     stringsAsFactors = F, header = F)
+    ## 
+    ## > eduData <- read.csv(eduFile, stringsAsFactors = F)
+
+#### Here we merge and futher tidy the data with human readable columns and set GDP as numeric.
 
 ``` r
-gdpData <- read.csv(gdpFile, skip = 5, nrows = 190, stringsAsFactors = F, header = F)
-eduData <- read.csv(eduFile, stringsAsFactors = F)
+source("MergeData.R", print.eval = TRUE, echo = TRUE)
 ```
 
-#### Bring In the Columns we Need
+    ## 
+    ## > gdpData <- gdpData[, c(1, 2, 4, 5)]
+    ## 
+    ## > colnames(gdpData) <- c("CountryCode", "Rank", "Country.Name", 
+    ## +     "GDP.Value")
+    ## 
+    ## > gdpData$GDP.Value <- as.numeric(gsub(",", "", gdpData$GDP.Value))
+    ## 
+    ## > matchedData <- merge(gdpData, eduData, by.x = "CountryCode", 
+    ## +     by.y = "CountryCode")
+
+#### In this section we answer the questions to the Case Study.
+
+##### 1. We use the dim command to answer that we have matched *189 countries.*
+
+##### 2. Using the arrange function which automatically sorts in ascending order we take our "Matched Data" and rank it looking for the 13th country which outputs as *Spain.*
+
+##### 3. To find the average GDP ranking for the "High Income: OECD" and "High Income: nonOECD" groups we use the mean function as a subset of our MatchedData on the ranks for the two subsets to get the *average rank of 91.913 or 92.*
+
+##### 4. For a visualization we use ggplot2 to create a dot plot by Income group. GDP Value is on a log 10 scale so to lessen the effect of outliers and help see the distribution of the Income Groups *See Graph Below*.
+
+##### 5. There are 5 quantile groups we want to look at, specifically we want to find how many countries are in the Lower Middle Income but are part of the 38 nations with the highest GDP. For this we break our matchedData by rank into 5 groups and create breaks in the rankings. We then cut the breaks and place them into a table with the rows being our quantile groups and our columns the rankings to see how many countries fall into each category. *This puts 5 countries that fit into Lower Middle Income, but are amount the top 38 nations with the highest GDP.*
 
 ``` r
-gdpData <- gdpData[, c(1, 2, 4, 5)]
+source("AnswerQuestions.R", print.eval = TRUE, echo = TRUE)
 ```
 
-#### Make The Columns Human Readable
-
-``` r
-colnames(gdpData) <- c("CountryCode", "Rank", "Country.Name", "GDP.Value")
-```
-
-#### Set GDP Value to Numeric
-
-``` r
-gdpData$GDP.Value <- as.numeric(gsub(",", "", gdpData$GDP.Value))
-```
-
-#### Merge the data based on country code
-
-``` r
-matchedData <- merge(gdpData, eduData, by.x = "CountryCode", by.y = "CountryCode")
-```
-
-#### Answer to question \#1 - Number of countries that match:
-
-``` r
-dim(matchedData)
-```
-
+    ## 
+    ## > dim(matchedData)
     ## [1] 189  34
-
-#### Answer to \#2 - Sort the data frame in desscending order, then What is the 13th country in the resulting data frame:
-
-``` r
-arrange(matchedData, Rank)[13, 3]
-```
-
+    ## 
+    ## > arrange(matchedData, Rank)[13, 3]
     ## [1] "Spain"
-
-#### Answers to \#3 - 3 What are the average GDP rankings for the "High income: OECD" and "High income: nonOECD" groups?
-
-##### High income: OECD
-
-``` r
-mean(subset(matchedData, Income.Group %in% "High income: OECD", select = c(Rank))$Rank)
-```
-
+    ## 
+    ## > mean(subset(matchedData, Income.Group %in% "High income: OECD", 
+    ## +     select = c(Rank))$Rank)
     ## [1] 32.96667
-
-##### High income: nonOECD
-
-``` r
-mean(subset(matchedData, Income.Group %in% "High income: nonOECD", select = c(Rank))$Rank)
-```
-
+    ## 
+    ## > mean(subset(matchedData, Income.Group %in% "High income: nonOECD", 
+    ## +     select = c(Rank))$Rank)
     ## [1] 91.91304
+    ## 
+    ## > ggplot(matchedData, aes(y = GDP.Value, x = Income.Group, 
+    ## +     fill = Income.Group)) + scale_y_log10() + geom_point(pch = 21, 
+    ## +     size = 8) + th .... [TRUNCATED]
 
-#### Answer to question \#4
+![](README_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
-``` r
-ggplot(matchedData,aes(y = GDP.Value, x =Income.Group, fill=Income.Group)) + scale_y_log10()+ geom_point(pch = 21, size = 8)
-```
-
-![](README_files/figure-markdown_github/unnamed-chunk-13-1.png)
-
-#### Answer to question \#5
-
-``` r
-breaks <- quantile(matchedData$Rank,seq(0, 1, 0.2))
-head(cut(matchedData$Rank, breaks = breaks))
-```
-
+    ## 
+    ## > breaks <- quantile(matchedData$Rank, seq(0, 1, 0.2))
+    ## 
+    ## > head(cut(matchedData$Rank, breaks = breaks))
     ## [1] (152,190]   (76.2,114]  (38.6,76.2] (114,152]   (1,38.6]    (1,38.6]   
     ## Levels: (1,38.6] (38.6,76.2] (76.2,114] (114,152] (152,190]
-
-``` r
-matchedData$quantile<-cut(matchedData$Rank,breaks=breaks)
-table(matchedData$Income.Group, matchedData$quantile)
-```
-
+    ## 
+    ## > matchedData$quantile <- cut(matchedData$Rank, breaks = breaks)
+    ## 
+    ## > table(matchedData$Income.Group, matchedData$quantile)
     ##                       
     ##                        (1,38.6] (38.6,76.2] (76.2,114] (114,152] (152,190]
     ##   High income: nonOECD        4           5          8         4         2
@@ -161,3 +170,8 @@ table(matchedData$Income.Group, matchedData$quantile)
     ##   Low income                  0           1          9        16        11
     ##   Lower middle income         5          13         11         9        16
     ##   Upper middle income        11           9          8         8         9
+
+Conclusion
+----------
+
+##### Although we find some evidence of a relationship with membership in the OECD we must caution the reader that the OECD has only been around for 50 years. It takes many years and geopolitical stability to build the necessary political and physical infrastructure needed to build a strong and stable economy. When we take a step back and look at the horizon of history many of the countries involved in OECD have spent at times hundreds of years developing the necessary political and physical infrastructure to participate and prosper in a global economy.
