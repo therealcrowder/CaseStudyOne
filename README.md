@@ -25,37 +25,37 @@ source("InstallPackagesLoadLibraries.R", print.eval = TRUE)
 
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
 
     ## Warning: package 'Rcurl' is not available (for R version 3.3.2)
 
@@ -63,10 +63,10 @@ source("InstallPackagesLoadLibraries.R", print.eval = TRUE)
 
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpbW9aDT/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
 
 #### Gathering the data with the below code allows us to download the data from the below websites and stores them in your current directory on R.
 
