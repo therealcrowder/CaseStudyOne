@@ -4,7 +4,7 @@ author: "Jonathan Knowles, Nadia Green, Michael Crowder"
 date: "March 20, 2017"
 output:
   github_document:
-    toc: true
+    toc: false
     toc_depth: 2
   html_document: default
 ---
