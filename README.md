@@ -3,15 +3,6 @@ CaseStudy1Makefile
 Jonathan Knowles, Nadia Green, Michael Crowder
 March 20, 2017
 
--   [Introduction](#introduction)
-    -   [We want to look at data that relates Gross Domestic Product and involvement in the Organization for Economic Cooperation and Development (OECD) for more information on the OECD please visit \[<https://usoecd.usmission.gov/mission/overview.html>\]. What we find from the below acquisition, cleaning and analysis of the data is that there appears to be some relationship to being a member country of the OECD and increased GDP. Below we have included the source of the information we used, the methods used to clean and tidy the data and our answers to case specific questions.](#we-want-to-look-at-data-that-relates-gross-domestic-product-and-involvement-in-the-organization-for-economic-cooperation-and-development-oecd-for-more-information-on-the-oecd-please-visit-httpsusoecd.usmission.govmissionoverview.html.-what-we-find-from-the-below-acquisition-cleaning-and-analysis-of-the-data-is-that-there-appears-to-be-some-relationship-to-being-a-member-country-of-the-oecd-and-increased-gdp.-below-we-have-included-the-source-of-the-information-we-used-the-methods-used-to-clean-and-tidy-the-data-and-our-answers-to-case-specific-questions.)
-    -   [Install Packages and Load Libraries - if you already have these Packages installed and loaded you may skip this step.](#install-packages-and-load-libraries---if-you-already-have-these-packages-installed-and-loaded-you-may-skip-this-step.)
-    -   [Gathering the data with the below code allows us to download the data from the below websites and stores them in your current directory on R.](#gathering-the-data-with-the-below-code-allows-us-to-download-the-data-from-the-below-websites-and-stores-them-in-your-current-directory-on-r.)
-    -   [Cleaning the data by using easy to understand file names from a CSV format.](#cleaning-the-data-by-using-easy-to-understand-file-names-from-a-csv-format.)
-    -   [Here we merge and futher tidy the data with human readable columns and set GDP as numeric.](#here-we-merge-and-futher-tidy-the-data-with-human-readable-columns-and-set-gdp-as-numeric.)
-    -   [In this section we answer the questions to the Case Study.](#in-this-section-we-answer-the-questions-to-the-case-study.)
-    -   [Conclusion](#conclusion)
-
 Introduction
 ============
 
@@ -25,37 +16,37 @@ source("InstallPackagesLoadLibraries.R", print.eval = TRUE)
 
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
 
     ## Warning: package 'Rcurl' is not available (for R version 3.3.2)
 
@@ -63,10 +54,10 @@ source("InstallPackagesLoadLibraries.R", print.eval = TRUE)
 
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpdCW7v1/downloaded_packages
+    ##  /var/folders/wz/910_s_x97vs8hrw8gnjc98g80000gn/T//RtmpfSN2Lp/downloaded_packages
 
 #### Gathering the data with the below code allows us to download the data from the below websites and stores them in your current directory on R.
 
